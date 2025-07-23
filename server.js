@@ -11,6 +11,16 @@ app.use(express.json());
 app.use(cors());
 
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Server is running!', 
+    endpoints: {
+      test: '/api/test'
+    }
+  });
+});
+
 // GET API
 
 app.get('/api/test', async (req, res) => {
